@@ -1,0 +1,27 @@
+export const coursesUL = [
+    // Faculty of Humanities - Education
+    { id: 'ul-1', title: 'BEd (SP & FET Teaching) - Bachelor of Education in Senior Phase & FET Teaching (majoring in Languages and Life Orientation)', requirements: { minAPS: 24, requiredSubjects: [{ subject: 'life_orientation', minLevel: 5 }, { subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 4 }] } },
+    { id: 'ul-2', title: 'BEd (SP & FET Teaching) - Bachelor of Education in Senior Phase & FET Teaching (majoring in Languages and Social Sciences)', requirements: { minAPS: 24, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 4 }] } },
+    { id: 'ul-3', title: 'BEd (SP & FET Teaching) - Bachelor of Education in Senior Phase & FET Teaching (majoring in Economics and Management Studies)', requirements: { minAPS: 24, requiredSubjects: [{ subject: 'english', minLevel: 3 }, { subject: 'additional_language', minLevel: 4 }] } },
+    { id: 'ul-4', title: 'BEd (SP & FET Teaching) - Bachelor of Education in Senior Phase & FET Teaching (majoring in Mathematics, Science & Technology)', requirements: { minAPS: 24, requiredSubjects: [{ subject: 'english', minLevel: 3 }, { subject: 'mathematics', minLevel: 4 }, { subject: 'physical_sciences', minLevel: 4 }, { subject: 'life_sciences', minLevel: 4 }] } },
+    { id: 'ul-5', title: 'BEd (FP Teaching) - Bachelor of Education in Foundation Phase Teaching', requirements: { minAPS: 24, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 4 }] } },
+
+    // Faculty of Humanities - Social Sciences
+    { id: 'ul-6', title: 'BSW - Bachelor of Social Work', requirements: { minAPS: 23, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 4 }, { subject: 'mathematics', minLevel: 3 }] } },
+    { id: 'ul-7', title: 'BPsych - Bachelor of Psychology', requirements: { minAPS: 23, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 4 }, { subject: 'mathematics', minLevel: 3 }] } },
+    { id: 'ul-8', title: 'BA - Bachelor of Arts (Political Studies stream)', requirements: { minAPS: 25, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 4 }] } },
+    { id: 'ul-9', title: 'BA - Bachelor of Arts (Sociology and Anthropology stream)', requirements: { minAPS: 23, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 4 }, { subject: 'mathematics', minLevel: 3 }] } },
+    { id: 'ul-10', title: 'BA - Bachelor of Arts (Cultural Studies stream)', requirements: { minAPS: 23, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 4 }, { subject: 'mathematics', minLevel: 3 }] } },
+    { id: 'ul-11', title: 'BA - Bachelor of Arts (Criminology and Psychology stream)', requirements: { minAPS: 23, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 4 }, { subject: 'mathematics', minLevel: 3 }] } },
+    { id: 'ul-12', title: 'BA - Bachelor of Arts (Criminology and Psychology stream) (Extended Curriculum Programme)', requirements: { minAPS: 22, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 4 }, { subject: 'mathematics', minLevel: 2 }] } },
+
+    // Faculty of Humanities - Language and Communication Studies
+    { id: 'ul-13', title: 'BA - Bachelor of Arts (Languages stream)', requirements: { minAPS: 25, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 5 }] } },
+    { id: 'ul-14', title: 'BA - Bachelor of Arts (Performing Arts stream)', requirements: { minAPS: 25, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 5 }] } },
+    { id: 'ul-15', title: 'BInfSt - Bachelor of Information Studies', requirements: { minAPS: 25, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 5 }] } },
+    { id: 'ul-16', title: 'BA (Communication Studies) - Bachelor of Arts in Communication Studies', requirements: { minAPS: 25, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 5 }] } },
+    { id: 'ul-17', title: 'BA (Media Studies) - Bachelor of Arts in Media Studies', requirements: { minAPS: 25, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 5 }] } },
+    { id: 'ul-18', title: 'BA (Media Studies) - Bachelor of Arts in Media Studies (Extended Curriculum Programme)', requirements: { minAPS: 23, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 4 }] } },
+    { id: 'ul-19', title: 'BA (Contemporary English and Multilingual Studies) - Bachelor of Arts in Contemporary English and Multilingual Studies', requirements: { minAPS: 24, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 3 }] } },
+    { id: 'ul-20', title: 'BA - Bachelor of Arts (Translation and Linguistics stream)', requirements: { minAPS: 25, requiredSubjects: [{ subject: 'english', minLevel: 4 }, { subject: 'additional_language', minLevel: 5 }] } }
+];

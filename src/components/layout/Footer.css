@@ -1,0 +1,165 @@
+.footer {
+    background: linear-gradient(135deg, var(--light-blue), #FFFFFF);
+    color: var(--very-dark-blue);
+    margin-top: auto;
+}
+
+.footer h5 {
+    color: var(--very-dark-blue) !important;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.footer h5::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(90deg, #FF7700, rgba(243, 6, 25, 0.96));
+    border-radius: 2px;
+}
+
+.footer .nav-link {
+    color: var(--very-dark-blue) !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    position: relative;
+    font-weight: 500;
+}
+
+.footer .nav-link:hover {
+    color: #FF7700 !important;
+    transform: translateX(8px);
+}
+
+.footer .nav-link::before {
+    content: '›';
+    position: absolute;
+    left: -15px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: #FF7700;
+}
+
+.footer .nav-link:hover::before {
+    opacity: 1;
+    left: -10px;
+}
+
+footer .footer .text-muted {
+    color: #64748B !important;
+    line-height: 1.6;
+}
+
+.footer .form-control {
+    border-radius: 25px 0 0 25px;
+    border: 2px solid transparent;
+    background: var(--light-blue);
+    color: var(--very-dark-blue);
+    border-right: none;
+    transition: all 0.3s ease;
+}
+
+.footer .form-control:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #FF7700;
+    color: var(--very-dark-blue);
+    box-shadow: 0 0 0 0.2rem rgba(255, 119, 0, 0.25);
+}
+
+.footer .form-control::placeholder {
+    color: var(--dark-blue);
+}
+
+.footer .btn {
+    border-radius: 0 25px 25px 0;
+    font-weight: 600;
+    background: linear-gradient(135deg, rgba(243, 6, 25, 0.96), #ff4444);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.footer .btn:hover {
+    background: linear-gradient(135deg, #ff4444, rgba(243, 6, 25, 0.96));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(243, 6, 25, 0.3);
+}
+
+.footer hr {
+    border-color: rgba(255, 119, 0, 0.3);
+    opacity: 0.6;
+}
+
+/* Bottom section links */
+.footer .nav .nav-link {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.9rem;
+}
+
+.footer .nav .nav-link:hover {
+    transform: translateY(-2px);
+}
+
+/* Heart icon color */
+.footer small {
+    color: #64748B;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 0;
+    }
+
+    .footer .nav-link {
+        padding: 0.5rem 0;
+    }
+
+    .footer .d-flex {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer .form-control {
+        border-radius: 25px;
+        margin-bottom: 0;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+    }
+
+    .footer .btn {
+        border-radius: 25px;
+        width: 100%;
+    }
+
+    .footer h5 {
+        margin-top: 1.5rem;
+    }
+
+    .footer h5:first-child {
+        margin-top: 0;
+    }
+}
+
+/* Animation for the subscribe form */
+.footer .form-group {
+    position: relative;
+}
+
+.footer .form-group:focus-within .form-control {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #FF7700;
+}
+
+/* Gradient text for the tagline */
+.footer small {
+    background: linear-gradient(135deg, #030212 , #0E0940);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 500;
+}

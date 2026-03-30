@@ -1,0 +1,392 @@
+.main-content {
+    padding: 1rem 0;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 60vh;
+    padding: 2rem 0;
+}
+
+.hero-content {
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideInLeft 0.6s ease-out 0.2s forwards;
+}
+
+.hero-image-col {
+    opacity: 0;
+    transform: translateX(30px);
+    animation: slideInRight 0.6s ease-out 0.3s forwards;
+}
+
+.display-4 {
+    color: var(--dark-blue) !important;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpFadeIn 0.5s ease-out 0.4s forwards;
+}
+
+.hero-subtitle {
+    color: #64748B !important;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpFadeIn 0.5s ease-out 0.5s forwards;
+}
+
+/* Hero Image Styling - Show Full Image */
+.hero-image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: all 0.5s ease;
+    height: 100%; /* Let content determine height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 500px; /* Maximum height to prevent being too large */
+    object-fit: contain; /* Show full image without cropping */
+    display: block;
+    transition: all 0.5s ease;
+    border-radius: 20px;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+    rgba(14, 9, 64, 0.1) 0%,
+    rgba(255, 119, 0, 0.1) 100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    border-radius: 20px;
+}
+
+.hero-image-container:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.hero-image-container:hover .image-overlay {
+    opacity: 1;
+}
+
+.hero-image-container:hover .hero-image {
+    transform: scale(1.03);
+}
+
+/* Alternative: If you want to control the image size differently */
+.hero-image-container.contain-image {
+    padding: 20px; /* Add some padding around the image */
+}
+
+/* Button Container Animation */
+.button-container {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpFadeIn 0.5s ease-out 0.6s forwards;
+}
+
+/* Features Section */
+.features-section {
+    padding: 4rem 0 2rem;
+}
+
+.section-title {
+    color: var(--dark-blue);
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpFadeIn 0.5s ease-out 0.7s forwards;
+}
+
+/* Feature Cards Animation */
+.feature-card {
+    background: linear-gradient(135deg, #ffffff, var(--light-blue));
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    color: var(--dark-blue);
+    border: 1px solid var(--light-blue) !important;
+    box-shadow: 0 8px 32px rgba(14, 9, 64, 0.08) !important;
+    padding: 2rem 1.5rem;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+/* Stagger animation for feature cards */
+.row .col:nth-child(1) .feature-card {
+    animation: slideUpFadeIn 0.5s ease-out 0.8s forwards;
+}
+
+.row .col:nth-child(2) .feature-card {
+    animation: slideUpFadeIn 0.5s ease-out 0.9s forwards;
+}
+
+.row .col:nth-child(3) .feature-card {
+    animation: slideUpFadeIn 0.5s ease-out 1.0s forwards;
+}
+
+.row .col:nth-child(4) .feature-card {
+    animation: slideUpFadeIn 0.5s ease-out 1.1s forwards;
+}
+
+/* Keyframe Animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Button Styles */
+.button-container .btn {
+    border-radius: 25px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    transform: scale(0.98);
+    animation: fadeInScale 0.4s ease-out 0.7s forwards;
+}
+
+/* Primary Button (Apply Now) */
+.btn-primary {
+    background: linear-gradient(135deg, rgba(243, 6, 25, 0.96), #ff4444) !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(243, 6, 25, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #ff4444, rgba(243, 6, 25, 0.96)) !important;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 18px rgba(243, 6, 25, 0.4);
+}
+
+/* Outline Button (Check More) */
+.btn-outline-secondary {
+    background: transparent !important;
+    color: var(--dark-blue) !important;
+    border: 2px solid var(--dark-blue) !important;
+    position: relative;
+}
+
+.btn-outline-secondary:hover {
+    background: var(--dark-blue) !important;
+    color: white !important;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(14, 9, 64, 0.3);
+}
+
+/* Feature Cards Hover Effects */
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--orange);
+}
+
+.feature-icon {
+    font-size: 4rem !important;
+    display: block;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--red), var(--orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: scale(0.9);
+    animation: fadeInScale 0.4s ease-out 0.6s forwards;
+}
+
+.feature-card h5 {
+    color: var(--dark-blue);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.feature-card p {
+    color: #64748B;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.feature-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.feature-card-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Additional hover effects for cards */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--orange), var(--red));
+    border-radius: 15px 15px 0 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-section {
+        text-align: center;
+    }
+
+    .hero-image-container {
+        transform: none;
+        margin-top: 2rem;
+    }
+
+    .hero-content {
+        transform: translateY(20px);
+        animation: slideUpFadeIn 0.6s ease-out 0.2s forwards;
+    }
+
+    .hero-image-col {
+        transform: translateY(20px);
+        animation: slideUpFadeIn 0.6s ease-out 0.3s forwards;
+    }
+
+    .hero-image {
+        max-height: 400px; /* Slightly smaller on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .button-container .btn {
+        width: 100%;
+        margin-bottom: 1rem;
+        margin-right: 0 !important;
+    }
+
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .feature-card {
+        margin-bottom: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+
+    .hero-image {
+        max-height: 350px; /* Smaller on mobile */
+    }
+
+    /* Adjust animation delays for mobile */
+    .row .col:nth-child(n) .feature-card {
+        animation: slideUpFadeIn 0.5s ease-out 0.8s forwards;
+    }
+}
+
+@media (max-width: 576px) {
+    .display-4 {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .feature-card {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .hero-image {
+        max-height: 300px; /* Smallest on mobile */
+    }
+}
+
+/* Alternative: If you want the image to be smaller but fully visible */
+.hero-image-container.compact {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.hero-image-container.compact .hero-image {
+    max-height: 400px;
+    width: auto;
+    max-width: 100%;
+}

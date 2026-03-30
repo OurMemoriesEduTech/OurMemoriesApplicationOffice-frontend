@@ -1,0 +1,145 @@
+.guide-step { background: #fff; box-shadow: 0 6px 18px rgba(12, 24, 48, 0.06); }
+
+.step-marker { width: 56px; display:flex; align-items:center; justify-content:center; }
+.step-number { width: 44px; height: 44px; border-radius: 12px; display:flex; align-items:center; justify-content:center; font-weight:700; }
+
+.card-header.bg-gradient { border-top-left-radius: .5rem; border-top-right-radius: .5rem; }
+
+.card-body { background: linear-gradient(180deg,#ffffff,#fbfdff); }
+
+.alert { border-radius: .5rem; }
+
+.btn-lg { padding: .6rem 1.1rem; }
+
+/* Professional Carousel Styling */
+.steps-carousel-container { max-width: 100%; margin: 0 auto; }
+
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: brightness(0) invert(1);
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+}
+
+.carousel-indicators {
+    bottom: -50px;
+    margin-bottom: 0;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #cbd5e1;
+    border: 2px solid #cbd5e1;
+    margin: 0 8px;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+    background-color: #1e3a8a;
+    border-color: #1e3a8a;
+    width: 14px;
+    height: 14px;
+}
+
+.carousel-step-content {
+    box-shadow: 0 12px 40px rgba(30, 58, 138, 0.15);
+    transition: all 0.3s ease;
+}
+
+.carousel-step-content:hover {
+    box-shadow: 0 16px 50px rgba(30, 58, 138, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Typography Enhancements */
+.carousel-step-text p {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.carousel-step-text ul {
+    padding-left: 1.5rem;
+}
+
+.carousel-step-text li {
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+}
+
+.carousel-step-text strong {
+    font-weight: 600;
+}
+
+.carousel-step-text small {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Badge Styling */
+.badge {
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+/* Professional Button Styles */
+.btn-primary {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    border: none;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.35);
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+}
+
+.btn-outline-secondary {
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f1f5f9;
+    border-color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+    .step-marker { width: 44px; }
+    .step-number { width:36px; height:36px; }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .carousel-step-content {
+        min-height: 300px;
+        padding: 2rem !important;
+    }
+    
+    .carousel-step-content h4 {
+        font-size: 1.2rem;
+    }
+    
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .carousel-indicators {
+        bottom: -40px;
+    }
+}
+

@@ -1,0 +1,369 @@
+/* Application Details Modal Styles */
+
+.modal-professional {
+  --bs-modal-border-radius: 12px;
+}
+
+.modal-professional .modal-content {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  animation: modalSlideUp 0.3s ease-out;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-header-pro {
+  border-radius: 12px 12px 0 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+}
+
+.modal-header-pro .modal-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+/* Header gradient and title polish */
+.header-bg {
+  background: linear-gradient(90deg, #0f172a 0%, #1e3a8a 40%, #2563eb 100%);
+  color: #fff;
+}
+.header-bg .modal-title {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.header-bg small {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Status banner */
+.status-banner {
+  border-left: 4px solid #3b82f6;
+  color: #374151;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.status-banner .badge {
+  font-size: 0.9rem;
+}
+
+/* Section card polish */
+.section-card {
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  border-radius: 10px;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+  padding: 1.25rem;
+}
+.section-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Icon accents */
+.section-card svg {
+  color: #2563eb !important;
+}
+
+/* Summary card */
+.modal-summary-card {
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* Footer button polish */
+.modal-footer-pro .btn {
+  border-radius: 8px;
+  padding: 0.6rem 1.1rem;
+  font-weight: 600;
+}
+.modal-footer-pro .btn-outline-secondary {
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+/* Form label refinement */
+.modal-professional .form-label,
+.modal-professional .form-label .fw-semibold {
+  color: #0f172a;
+}
+
+.modal-body-pro {
+  padding: 2rem;
+}
+
+.modal-footer-pro {
+  border-radius: 0 0 12px 12px;
+  justify-content: flex-end;
+}
+
+/* Section Cards */
+.section-card {
+  border: 1px solid #e2e8f0 !important;
+  transition: all 0.25s ease;
+}
+
+.section-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Form Controls in Modal */
+.modal-professional .form-control,
+.modal-professional .form-select {
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  background-color: #ffffff;
+}
+
+.modal-professional .form-control:focus,
+.modal-professional .form-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.15);
+  background-color: #ffffff;
+}
+
+.modal-professional .form-label {
+  font-weight: 600;
+  color: #1e3a8a;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.2px;
+}
+
+/* Buttons */
+.btn-action-pro {
+  border-radius: 8px !important;
+  padding: 0.6rem 1.2rem !important;
+  font-weight: 600 !important;
+  transition: all 0.25s ease;
+  border: none !important;
+}
+
+.btn-action-pro:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-action-pro:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.modal-professional .btn-outline-light {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.modal-professional .btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Close Button */
+.modal-professional .btn-close {
+  filter: invert(1) brightness(2);
+  opacity: 0.8;
+  transition: all 0.25s ease;
+}
+
+.modal-professional .btn-close:hover {
+  filter: invert(1) brightness(3);
+  opacity: 1;
+}
+
+/* Badges */
+.modal-professional .badge {
+  padding: 0.5em 0.7em;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Alerts */
+.modal-professional .alert {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #f8fafc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-body-pro {
+    padding: 1.5rem;
+  }
+
+  .modal-header-pro {
+    padding: 1.25rem;
+  }
+
+  .modal-professional .form-control,
+  .modal-professional .form-select {
+    padding: 0.6rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .section-card {
+    padding: 1rem !important;
+  }
+
+  .section-card .card-body {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-professional {
+    --bs-modal-margin: 0.5rem;
+  }
+
+  .modal-body-pro {
+    padding: 1rem;
+  }
+
+  .modal-header-pro {
+    padding: 1rem;
+  }
+
+  .modal-professional .form-control,
+  .modal-professional .form-select {
+    padding: 0.55rem 0.65rem;
+    font-size: 0.85rem;
+  }
+
+  .btn-action-pro {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .section-card {
+    padding: 0.75rem !important;
+  }
+}
+
+/* Document preview modal responsiveness */
+.document-preview-modal .modal-dialog {
+  margin: 0.5rem;
+  max-width: 95%;
+  width: auto;
+}
+
+.document-preview-modal .modal-content {
+  height: 90vh;
+  max-height: 90vh;
+}
+
+.document-preview-modal .modal-body {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.document-preview-modal iframe {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .document-preview-modal .modal-content {
+    height: 85vh;
+  }
+
+  .document-preview-modal .modal-dialog {
+    margin: 0.2rem;
+    max-width: 98%;
+  }
+
+  .document-preview-modal .modal-header .modal-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .document-preview-modal .modal-content {
+    height: 80vh;
+  }
+}
+
+.status-timeline .step-circle {
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     background: #e9ecef;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 18px;
+     margin: 0 auto;
+ }
+
+ .status-timeline .step-circle.completed {
+     background: #28a745;
+     color: white;
+ }
+
+ .status-timeline .step-circle.current {
+     background: #0d6efd;
+     color: white;
+     box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.3);
+ }
+
+/* Add to ApplicationDetailsModal.css */
+
+.status-timeline .step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e9ecef;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.status-timeline .step-circle.completed {
+  background: #28a745;
+  color: white;
+}
+
+.status-timeline .step-circle.current {
+  background: #0d6efd;
+  color: white;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.3);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .status-timeline .step-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .status-timeline small {
+    font-size: 10px;
+  }
+}

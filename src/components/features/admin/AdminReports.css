@@ -1,0 +1,50 @@
+/* AdminReports.css */
+
+.report-header {
+    padding: 20px 0;
+}
+
+.filter-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.filter-card .card-body {
+    padding: 20px;
+}
+
+.stat-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.table-responsive {
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    .stat-card .display-6 {
+        font-size: 1.8rem;
+    }
+    .stat-icon {
+        font-size: 1.6rem;
+    }
+    .filter-card .btn {
+        margin-top: 8px;
+    }
+}

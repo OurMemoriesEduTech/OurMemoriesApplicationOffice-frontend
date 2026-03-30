@@ -1,0 +1,141 @@
+.announcements-page {
+    padding: 20px 0;
+}
+
+.announcement-title {
+    color: #0E0940;
+}
+
+.announcement-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.announcement-card {
+    border: none;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.announcement-card:hover {
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+}
+
+.announcement-card.important-card {
+    border: 2px solid #dc3545;
+}
+
+.announcement-card .card-body {
+    padding: 30px;
+}
+
+.important-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+}
+
+.important-badge .badge {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    box-shadow: 0 3px 10px rgba(220, 53, 69, 0.3);
+}
+
+.announcement-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:  var(--red);
+    box-shadow: 0 5px 15px rgba(14, 9, 64, 0.2);
+}
+
+.announcement-icon {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.announcement-card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0E0940;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.announcement-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 0;
+}
+
+.announcement-footer {
+    border-top: 1px solid #e2e8f0;
+}
+
+.footer-icon {
+    color: #0E0940;
+    font-size: 0.9rem;
+}
+
+.empty-state {
+    border-radius: 15px;
+    border: none;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.empty-icon {
+    font-size: 3rem;
+    color: #0E0940;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .announcement-title {
+        font-size: 2rem;
+    }
+    
+    .announcement-subtitle {
+        font-size: 1rem;
+    }
+    
+    .announcement-card .card-body {
+        padding: 20px;
+    }
+    
+    .announcement-card-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .announcements-page {
+        padding: 10px 0;
+    }
+    
+    .important-badge {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .announcement-icon-wrapper {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .announcement-icon {
+        font-size: 1.5rem;
+    }
+}

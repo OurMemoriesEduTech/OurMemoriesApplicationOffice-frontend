@@ -1,0 +1,477 @@
+:root {
+    --dark-blue: #0E0940;
+    --very-dark-blue: #030212;
+    --orange: #FF7700;
+    --light-blue: #E6F0FF;
+    --red: rgba(243, 6, 25, 0.96);
+    --primary-text: var(--dark-blue);
+    --accent-subtle: var(--light-blue);
+    --accent-strong: var(--orange);
+    --danger: var(--red);
+    --bg-primary: white;
+    --bg-secondary: #f9fbff;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   BASE
+   ────────────────────────────────────────────────────────────── */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--accent-subtle);
+    color: var(--primary-text);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   LAYOUT
+   ────────────────────────────────────────────────────────────── */
+.app-container { max-width:1200px; margin:auto; padding:20px; }
+.page-wrapper {
+    background: var(--bg-primary);
+    border-radius:12px;
+    padding:30px;
+    box-shadow:0 4px 20px rgba(14,9,64,.08);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   HERO – DARK BLUE
+   ────────────────────────────────────────────────────────────── */
+.hero { text-align:center; margin-bottom:30px; }
+.hero h1 {
+    font-size:28px;
+    margin-bottom:8px;
+    color: var(--primary-text);
+    font-weight:700;
+}
+.hero p {
+    font-size:16px;
+    color: #64748b;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   APS BANNER – LIGHT BLUE
+   ────────────────────────────────────────────────────────────── */
+.aps-banner {
+    background: var(--accent-subtle);
+    color: var(--primary-text);
+    padding:12px 16px;
+    border-radius:8px;
+    border-left:4px solid var(--accent-strong);
+    font-weight:600;
+    margin:20px 0;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   SUBJECTS – LIGHT BLUE THEME
+   ────────────────────────────────────────────────────────────── */
+.subjects-section { margin:30px 0; }
+.subjects-section h3 {
+    font-size:18px;
+    margin-bottom:15px;
+    color: var(--primary-text);
+    font-weight:600;
+}
+
+/* empty state */
+.empty-with-add {
+    text-align:center;
+    padding:30px 20px;
+    background: var(--bg-secondary);
+    border:2px dashed var(--accent-subtle);
+    border-radius:12px;
+    color: #64748b;
+}
+
+/* subject row */
+.subject-row {
+    display:grid;
+    grid-template-columns:2fr 1fr 80px 40px;
+    gap:10px; align-items:center;
+    padding:12px;
+    background: var(--bg-secondary);
+    border:1px solid var(--accent-subtle);
+    border-radius:8px;
+}
+.subject-row select,
+.subject-row input {
+    padding:10px;
+    border:1px solid var(--accent-subtle);
+    border-radius:6px;
+    font-size:15px;
+    background: var(--bg-primary);
+}
+.subject-row input.error {
+    border-color: var(--danger);
+    background: #fef2f2;
+}
+
+.level {
+    text-align:center;
+    font-weight:600;
+    color: var(--primary-text);
+}
+
+/* DELETE – RED ONLY */
+/* DELETE BUTTON – RED, LARGER, TOUCH-FRIENDLY */
+.remove-btn {
+    background: var(--red);
+    color: white;
+    border: none;
+    width: 50px;           /* Was 36px → now 50px */
+    height: 50px;          /* Was 36px → now 50px */
+    border-radius: 50%;
+    font-size: 22px;       /* Was 18px → clearer × */
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(243,6,25,.3);
+}
+
+.remove-btn:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(243,6,25,.4);
+}
+
+/* ADD – ORANGE (ONE PLACE) */
+.add-btn-inline {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   RESULTS – DARK BLUE
+   ────────────────────────────────────────────────────────────── */
+.results h3 {
+    font-size:18px;
+    color: var(--primary-text);
+    margin:25px 0;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   FILTERS – LIGHT BLUE PANEL
+   ────────────────────────────────────────────────────────────── */
+.filter-section { margin:25px 0 15px; }
+
+.filter-toggle {
+    width:100%;
+    background: var(--bg-secondary);
+    border:1px solid var(--accent-subtle);
+    border-radius:10px;
+    padding:14px 16px;
+    font-size:16px;
+    font-weight:600;
+    color: var(--primary-text);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+}
+.filter-icon {
+    width:20px; height:20px;
+    background: var(--primary-text);
+    border-radius:4px;
+    position:relative; margin-right:10px;
+}
+.filter-icon::before,
+.filter-icon::after {
+    content:'';
+    position:absolute;
+    background:white;
+    left:50%; top:50%;
+    transform:translate(-50%,-50%);
+}
+.filter-icon::before { width:10px; height:2px; }
+.filter-icon::after  { width:2px;  height:10px; }
+
+.filter-panel {
+    margin-top:12px;
+    padding:16px;
+    background: var(--bg-secondary);
+    border:1px solid var(--accent-subtle);
+    border-radius:10px;
+}
+
+.uni-selector-inline {
+    display:flex; align-items:center; gap:12px;
+    margin-bottom:12px;
+}
+.uni-selector-inline label {
+    font-weight:600;
+    color: var(--primary-text);
+}
+.uni-selector-inline select,
+.filters input,
+.filters select {
+    padding:10px;
+    border:1px solid var(--accent-subtle);
+    border-radius:6px;
+    background: var(--bg-primary);
+}
+
+/* RESET – SUBTLE GREY */
+.reset-btn {
+    background: #94a3b8;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   TABLE – DARK BLUE HEADERS
+   ────────────────────────────────────────────────────────────── */
+.table-section h3 {
+    margin:0 0 12px;
+    font-size:18px;
+    color: var(--primary-text);
+}
+
+.table-wrapper {
+    overflow-x:auto;
+    border-radius:8px;
+    box-shadow:0 4px 12px rgba(14,9,64,.06);
+}
+
+.courses-table th {
+    background: var(--primary-text);
+    color: white;
+    padding:12px 10px;
+    text-align:left;
+    font-weight:600;
+}
+
+.courses-table td {
+    padding:12px 10px;
+    border-bottom:1px solid var(--accent-subtle);
+}
+
+/* TAGS – LIGHT BLUE */
+.tag {
+    background: var(--accent-subtle);
+    color: var(--primary-text);
+    padding:4px 8px;
+    border-radius:6px;
+    font-size:12px;
+}
+
+/* STATUS */
+.status.yes { color:#10b981; font-weight:600; }
+.status.no  { color: var(--danger); }
+
+/* APPLY – ORANGE (ONE PLACE) */
+.apply-btn-small {
+    background: var(--accent-strong);
+    color: white;
+    border: none;
+    padding:6px 10px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.no-subjects {
+    color: var(--primary-text);
+    font-style:italic;
+    font-size:14px;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   MOBILE – EQUAL BUTTONS
+   ────────────────────────────────────────────────────────────── */
+@media (max-width:768px) {
+    .subject-row { grid-template-columns:1fr; gap:12px; }
+    .subject-row select,
+    .subject-row input { width:100%; }
+
+    .button-group { display:flex; justify-content:center; }
+    .remove-btn,
+    .add-btn-inline {
+        width:100%;
+        max-width:280px;
+        height:48px;
+        border-radius:8px;
+        font-size:16px;
+        font-weight:600;
+    }
+
+    .uni-selector-inline { flex-direction:column; }
+    .uni-selector-inline select { width:100%; }
+
+    .courses-table { font-size:13px; }
+    .courses-table th,
+    .courses-table td { padding:8px 6px; }
+
+    /* Hide filter panel until toggle */
+    .filter-panel { display:none; }
+    .filter-panel[style*="display: block"] { display:block !important; }
+}
+
+/* DESKTOP */
+@media (min-width:769px) {
+    .filter-toggle { display:none; }
+    .filter-panel {
+        display:block !important;
+        margin-top:0;
+        padding:0;
+        background:transparent;
+        border:none;
+    }
+}
+
+/* ========================================
+   BUTTON BASE – SHARED HOVER/TAP STYLES
+   ======================================== */
+button {
+    transition: all 0.22s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Hover on desktop, active (tap) on mobile */
+button:hover,
+button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0,0,0,.12);
+}
+
+/* ========================================
+   ADD BUTTON – ORANGE
+   ======================================== */
+.add-btn-inline {
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(255,119,0,.2);
+}
+
+.add-btn-inline:hover,
+.add-btn-inline:active {
+    background: #e66a00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255,119,0,.3);
+}
+
+/* ========================================
+   REMOVE BUTTON – RED
+   ======================================== */
+.remove-btn {
+    background: var(--red);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(243,6,25,.25);
+}
+
+.remove-btn:hover,
+.remove-btn:active {
+    background: #c0392b;
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(243,6,25,.35);
+}
+
+/* ========================================
+   APPLY BUTTON (SMALL) – ORANGE
+   ======================================== */
+.apply-btn-small {
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(255,119,0,.2);
+}
+
+.apply-btn-small:hover,
+.apply-btn-small:active {
+    background: #e66a00;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(255,119,0,.3);
+}
+
+/* ========================================
+   RESET BUTTON – RED
+   ======================================== */
+.reset-btn {
+    background: var(--red);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(243,6,25,.2);
+}
+
+.reset-btn:hover,
+.reset-btn:active {
+    background: #c0392b;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(243,6,25,.3);
+}
+
+/* ========================================
+   FILTER TOGGLE – SUBTLE
+   ======================================== */
+.filter-toggle {
+    background: #fdfdff;
+    border: 1.5px solid var(--light-blue);
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(14,9,64,.05);
+}
+
+.filter-toggle:hover,
+.filter-toggle:active {
+    background: #f1f5f9;
+    border-color: var(--orange);
+    box-shadow: 0 4px 12px rgba(14,9,64,.1);
+}
+
+@media (max-width: 768px) {
+    /* All buttons get same hover/active style on tap */
+    .add-btn-inline,
+    .remove-btn,
+    .apply-btn-small,
+    .reset-btn,
+    .filter-toggle {
+        transition: all 0.18s ease;
+    }
+
+    .add-btn-inline:active,
+    .remove-btn:active,
+    .apply-btn-small:active,
+    .reset-btn:active,
+    .filter-toggle:active {
+        transform: scale(0.96) !important;
+        opacity: 0.9;
+    }
+}

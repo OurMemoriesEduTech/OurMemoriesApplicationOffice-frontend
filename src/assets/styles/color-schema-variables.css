@@ -1,0 +1,14 @@
+:root {
+    /* Color Variables */
+    --dark-blue: #0E0940;
+    --very-dark-blue: #030212;
+    --orange: #FF7700;
+    --light-blue: #E6F0FF;
+    --red: rgba(243, 6, 25, 0.96);
+    --primary-text: var(--dark-blue);
+    --primary-accent: var(--orange);
+    --secondary-accent: var(--red);
+    --border-color: var(--light-blue);
+    --background: white;
+    --hover-background: #f8f9fa;
+}

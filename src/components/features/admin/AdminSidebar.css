@@ -1,0 +1,86 @@
+/* AdminSidebar.css - Sidebar specific styles */
+
+.admin-sidebar-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 1rem;
+}
+
+.sidebar-header {
+    padding: 1rem;
+    border-bottom: 1px solid #2c3e50;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.sidebar-logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    display: block;
+}
+
+.admin-sidebar-inner .nav {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.admin-sidebar-inner .nav-link,
+.admin-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.75rem 1rem;
+    color: #e2e8f0 !important;
+    background-color: transparent !important;
+    text-decoration: none !important;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+    font-weight: normal;
+}
+
+.admin-sidebar-inner .nav-link:hover,
+.admin-nav-link:hover {
+    color: white !important;
+    background-color: #2c3e50 !important;
+    border-left-color: #ffc107 !important;
+}
+
+.admin-sidebar-inner .nav-link.active,
+.admin-nav-link.active {
+    color: white !important;
+    background-color: #2c3e50 !important;
+    border-left-color: #ffc107 !important;
+    font-weight: 500 !important;
+}
+
+/* Logout link */
+.admin-nav-link.text-danger,
+.admin-sidebar-inner .nav-link.text-danger {
+    color: #ff9999 !important;
+}
+
+.admin-nav-link.text-danger:hover,
+.admin-sidebar-inner .nav-link.text-danger:hover {
+    color: #ffcccc !important;
+    background-color: #2c3e50 !important;
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+    min-width: 28px;
+    text-align: center;
+}
+
+.nav-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.sidebar-divider {
+    height: 1px;
+    background-color: #2c3e50;
+    margin: 1rem 0;
+    flex-shrink: 0;
+}
