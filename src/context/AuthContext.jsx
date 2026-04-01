@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
     const login = async (email, password) => {
         console.log('API_BASE_URL from env:', import.meta.env.VITE_API_BASE_URL);
         console.log('Final API_BASE_URL:', API_BASE_URL);
-        console.log('Full login URL:', `${API_BASE_URL}/auth/login`);
+        console.log('Full login URL:', `https://ourmemoriesapplicationoffice-server.onrender.com/api/auth/login`);
 
         try {
             const response = await axios.post(
