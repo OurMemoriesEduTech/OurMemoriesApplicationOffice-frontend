@@ -42,19 +42,19 @@ export const AuthProvider = ({ children }) => {
 
 
     const login = async (email, password) => {
-        console.log('API_BASE_URL from env:', import.meta.env.VITE_API_BASE_URL);
-        console.log('Final API_BASE_URL:', API_BASE_URL);
-        console.log('Full login URL:', `https://ourmemoriesapplicationoffice-server.onrender.com/api/auth/login`);
-
+        console.log('Logging in user:', { email }); // Debug log
         try {
             const response = await axios.post(
                 `${API_BASE_URL}/auth/login`,
                 { email, password },
                 { headers: { 'Content-Type': 'application/json' }, withCredentials: true }
             );
-            // ... rest of code
+            const { success } = response.data;
+            setIsAuthenticated(true);
+            setUser(success.userInformation); // e.g., { email, name, token }
+            console.log('Login successful:', success.userInformation); // Debug log
         } catch (err) {
-            console.error('Login error:', err);
+            console.error('Login error:', err.response?.data?.fail || err.message); // Debug log
             throw new Error(err.response?.data?.fail || 'Login failed');
         }
     };

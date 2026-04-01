@@ -6,8 +6,6 @@ import { FaFacebook } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './AuthModals.css';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api";
-
 const LoginModal = ({ show, onHide, openSignupModal ,openForgotPasswordModal}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -18,6 +16,7 @@ const LoginModal = ({ show, onHide, openSignupModal ,openForgotPasswordModal}) =
     const { login, user, isAuthenticated } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -38,7 +37,7 @@ const LoginModal = ({ show, onHide, openSignupModal ,openForgotPasswordModal}) =
 
         try {
             await login(email, password);
-            setLoginTriggered(true);
+            setLoginTriggered(true); // Signal that login was attempted
         } catch (err) {
             setError(err.message || 'Login failed');
             setLoading(false);
@@ -48,8 +47,8 @@ const LoginModal = ({ show, onHide, openSignupModal ,openForgotPasswordModal}) =
 
     useEffect(() => {
         if (isAuthenticated && user && loginTriggered) {
-            setLoginTriggered(false);
-            setLoading(false);
+            setLoginTriggered(false); // Reset trigger
+            setLoading(false); // Stop loading
             onHide();
             if (user.role === 'ADMIN') {
                 navigate('/admin/dashboard');
@@ -60,14 +59,11 @@ const LoginModal = ({ show, onHide, openSignupModal ,openForgotPasswordModal}) =
     }, [isAuthenticated, user, loginTriggered, navigate, location.state, onHide]);
 
     const handleGoogleLogin = () => {
-        // Get backend root URL (remove /api)
-        const backendUrl = API_BASE_URL.replace('/api', '');
-        window.location.href = `${backendUrl}/oauth2/authorization/google`;
+        window.location.href = '/oauth2/authorization/google';
     };
 
     const handleFacebookLogin = () => {
-        const backendUrl = API_BASE_URL.replace('/api', '');
-        window.location.href = `${backendUrl}/oauth2/authorization/facebook`;
+        window.location.href = '/oauth2/authorization/facebook';
     };
 
     return (

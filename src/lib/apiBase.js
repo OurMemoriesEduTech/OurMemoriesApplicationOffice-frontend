@@ -1,6 +1,6 @@
-const rawApiBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api";
+const rawApiBaseUrl = "https://ourmemoriesapplicationoffice-server.onrender.com";
 
 export const API_BASE_URL = rawApiBaseUrl
-    .replace(/[\r\n]/g, '')
-    .trim()
-    .replace(/\/$/, '');
+  .replace(/\\r|\\n/g, "")
+  .replace(/[\r\n]/g, "")
+  .trim();
