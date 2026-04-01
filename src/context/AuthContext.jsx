@@ -42,19 +42,19 @@ export const AuthProvider = ({ children }) => {
 
 
     const login = async (email, password) => {
-        console.log('Logging in user:', { email }); // Debug log
+        console.log('API_BASE_URL from env:', import.meta.env.VITE_API_BASE_URL);
+        console.log('Final API_BASE_URL:', API_BASE_URL);
+        console.log('Full login URL:', `${API_BASE_URL}/auth/login`);
+
         try {
             const response = await axios.post(
                 `${API_BASE_URL}/auth/login`,
                 { email, password },
                 { headers: { 'Content-Type': 'application/json' }, withCredentials: true }
             );
-            const { success } = response.data;
-            setIsAuthenticated(true);
-            setUser(success.userInformation); // e.g., { email, name, token }
-            console.log('Login successful:', success.userInformation); // Debug log
+            // ... rest of code
         } catch (err) {
-            console.error('Login error:', err.response?.data?.fail || err.message); // Debug log
+            console.error('Login error:', err);
             throw new Error(err.response?.data?.fail || 'Login failed');
         }
     };
