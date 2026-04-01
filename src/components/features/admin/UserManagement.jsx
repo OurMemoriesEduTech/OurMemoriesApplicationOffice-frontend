@@ -31,6 +31,7 @@ import {
 } from "react-icons/fi";
 import axios from "axios";
 import "./UserManagement.css";
+import { API_BASE_URL } from '../../../lib/apiBase.js';
 
 const UserManagement = () => {
   const navigate = useNavigate();
@@ -81,7 +82,7 @@ const UserManagement = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api"}/admin/users`,
+        `${API_BASE_URL}/admin/users`,
         {
           withCredentials: true,
         },
@@ -170,7 +171,7 @@ const UserManagement = () => {
       if (editing) {
         // Update
         await axios.put(
-          `${import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api"}/admin/users/${editing.id}`,
+          `${API_BASE_URL}/admin/users/${editing.id}`,
           form,
           {
             withCredentials: true,
@@ -179,7 +180,7 @@ const UserManagement = () => {
         showToast("User updated successfully.");
       } else {
         // Create
-        await axios.post(`${import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api"}/admin/users`, form, {
+        await axios.post(`${API_BASE_URL}/admin/users`, form, {
           withCredentials: true,
         });
         showToast("User added successfully.");
@@ -198,7 +199,7 @@ const UserManagement = () => {
   const toggleStatus = async (id) => {
     try {
       await axios.patch(
-        `${import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api"}/admin/users/${id}/toggle-status`,
+        `${API_BASE_URL}/admin/users/${id}/toggle-status`,
         {},
         {
           withCredentials: true,
@@ -215,7 +216,7 @@ const UserManagement = () => {
     if (!window.confirm("Delete this user? This cannot be undone.")) return;
 
     try {
-      await axios.delete(`${import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api"}/admin/users/${id}`, {
+      await axios.delete(`${API_BASE_URL}/admin/users/${id}`, {
         withCredentials: true,
       });
       showToast("User deleted successfully.", "danger");
@@ -361,8 +362,8 @@ const UserManagement = () => {
                     style={{ borderColor: "#e2e8f0" }}
                   >
                     <option value="">All Roles</option>
-                    <option value="USER">👤 Applicant</option>
-                    <option value="ADMIN">⚙️ Admin</option>
+                    <option value="USER">ðŸ‘¤ Applicant</option>
+                    <option value="ADMIN">âš™ï¸ Admin</option>
                   </Form.Select>
                 </Form.Group>
               </Col>
@@ -381,8 +382,8 @@ const UserManagement = () => {
                     style={{ borderColor: "#e2e8f0" }}
                   >
                     <option value="">All Status</option>
-                    <option value="ACTIVE">✓ Active</option>
-                    <option value="SUSPENDED">⏸ Suspended</option>
+                    <option value="ACTIVE">âœ“ Active</option>
+                    <option value="SUSPENDED">â¸ Suspended</option>
                   </Form.Select>
                 </Form.Group>
               </Col>
@@ -542,7 +543,7 @@ const UserManagement = () => {
                           borderRadius: "6px",
                         }}
                       >
-                        {u.role === "ADMIN" ? "⚙️ Admin" : "👤 Applicant"}
+                        {u.role === "ADMIN" ? "âš™ï¸ Admin" : "ðŸ‘¤ Applicant"}
                       </Badge>
                     </td>
                     <td style={{ padding: "12px 15px" }}>
@@ -559,9 +560,9 @@ const UserManagement = () => {
                         }}
                       >
                         {u.status === "ACTIVE" ? (
-                          <>✓ Active</>
+                          <>âœ“ Active</>
                         ) : (
-                          <>⏸ Suspended</>
+                          <>â¸ Suspended</>
                         )}
                       </Badge>
                     </td>
@@ -652,7 +653,7 @@ const UserManagement = () => {
             }}
           >
             <Modal.Title className="fw-bold" style={{ fontSize: "1.3rem" }}>
-              {editing ? "✏️ Edit User" : "➕ Add New User"}
+              {editing ? "âœï¸ Edit User" : "âž• Add New User"}
             </Modal.Title>
           </Modal.Header>
           <Modal.Body style={{ backgroundColor: "#f8fafc", padding: "24px" }}>
@@ -769,9 +770,9 @@ const UserManagement = () => {
                   }}
                 >
                   <option value="USER">
-                    👤 User - Can submit applications
+                    ðŸ‘¤ User - Can submit applications
                   </option>
-                  <option value="ADMIN">⚙️ Admin - Full system access</option>
+                  <option value="ADMIN">âš™ï¸ Admin - Full system access</option>
                 </Form.Select>
               </Form.Group>
 
@@ -836,9 +837,9 @@ const UserManagement = () => {
                   Saving...
                 </>
               ) : editing ? (
-                "💾 Save Changes"
+                "ðŸ’¾ Save Changes"
               ) : (
-                "➕ Add User"
+                "âž• Add User"
               )}
             </Button>
           </Modal.Footer>
@@ -863,7 +864,7 @@ const UserManagement = () => {
               }}
             >
               <strong className="me-auto">
-                {toast.variant === "danger" ? "✕ Error" : "✓ Success"}
+                {toast.variant === "danger" ? "âœ• Error" : "âœ“ Success"}
               </strong>
             </Toast.Header>
             <Toast.Body

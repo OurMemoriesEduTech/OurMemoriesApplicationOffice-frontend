@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Button, Form, Alert } from 'react-bootstrap';
 import axios from 'axios';
 import './AuthModals.css';
+import { API_BASE_URL } from '../../../lib/apiBase.js';
 
 const ForgotPasswordModal = ({ show, onHide, openVerifyOtpModal, openLoginModal }) => {
     const [email, setEmail] = useState('');
@@ -24,7 +25,7 @@ const ForgotPasswordModal = ({ show, onHide, openVerifyOtpModal, openLoginModal 
 
         try {
             const response = await axios.post(
-                `${import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api"}/auth/forgot-password/request-otp`,
+                `${API_BASE_URL}/auth/forgot-password/request-otp`,
                 { email },
                 { headers: { 'Content-Type': 'application/json' } }
             );

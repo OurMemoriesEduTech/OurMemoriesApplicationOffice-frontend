@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Button, Form, Alert } from 'react-bootstrap';
 import axios from 'axios';
 import './AuthModals.css';
+import { API_BASE_URL } from '../../../lib/apiBase.js';
 
 const ResetPasswordModal = ({ show, onHide, email , openLoginModal }) => {
     const [password, setPassword] = useState('');
@@ -29,7 +30,7 @@ const ResetPasswordModal = ({ show, onHide, email , openLoginModal }) => {
 
         try {
             const response = await axios.put(
-                `${import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api"}/auth/forgot-password/reset-password`,
+                `${API_BASE_URL}/auth/forgot-password/reset-password`,
                 { email, newPassword: password },
                 { headers: { 'Content-Type': 'application/json' } }
             );

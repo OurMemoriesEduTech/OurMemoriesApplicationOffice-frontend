@@ -4,6 +4,7 @@ import { Container, Card, Spinner, Alert, Badge, Row, Col } from 'react-bootstra
 import { useParams, Link } from 'react-router-dom';
 import AdminSidebar from '../admin/AdminSidebar.jsx';
 import axios from 'axios';
+import { API_BASE_URL } from '../../../lib/apiBase.js';
 
 const ViewApplication = () => {
     const { id } = useParams();
@@ -15,7 +16,7 @@ const ViewApplication = () => {
         const fetchApplicant = async () => {
             try {
                 const res = await axios.get(
-                    `${import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api"}/admin/application/${id}/applicant`,
+                    `${API_BASE_URL}/admin/application/${id}/applicant`,
                     { withCredentials: true }
                 );
 
@@ -54,7 +55,7 @@ const ViewApplication = () => {
                 <Container className="mt-5">
                     <Alert variant="danger">{error || 'Applicant not found'}</Alert>
                     <Link to="/admin/applications" className="btn btn-secondary">
-                        ← Back to Applications
+                        â† Back to Applications
                     </Link>
                 </Container>
             </div>
@@ -66,7 +67,7 @@ const ViewApplication = () => {
             <AdminSidebar />
 
             <Container fluid className="py-5">
-                <h1 className="mb-4">Applicant Details – ID #{id}</h1>
+                <h1 className="mb-4">Applicant Details â€“ ID #{id}</h1>
 
                 <Card className="shadow">
                     <Card.Header className="bg-primary text-white fs-5">
@@ -85,9 +86,9 @@ const ViewApplication = () => {
                             <Col md={6}>
                                 <p><strong>Email:</strong> {applicant.email}</p>
                                 <p><strong>Cell:</strong> {applicant.cellNumber}</p>
-                                <p><strong>Home Number:</strong> {applicant.homeNumber || '—'}</p>
-                                <p><strong>ID Number:</strong> {applicant.idNumber || '—'}</p>
-                                <p><strong>Passport:</strong> {applicant.passportNumber || '—'}</p>
+                                <p><strong>Home Number:</strong> {applicant.homeNumber || 'â€”'}</p>
+                                <p><strong>ID Number:</strong> {applicant.idNumber || 'â€”'}</p>
+                                <p><strong>Passport:</strong> {applicant.passportNumber || 'â€”'}</p>
                                 <p><strong>South African:</strong> {applicant.isSouthAfrican ? 'Yes' : 'No'}</p>
                             </Col>
                         </Row>
@@ -107,7 +108,7 @@ const ViewApplication = () => {
 
                 <div className="mt-4">
                     <Link to="/admin/applications" className="btn btn-lg btn-secondary">
-                        ← Back to All Applications
+                        â† Back to All Applications
                     </Link>
                 </div>
             </Container>

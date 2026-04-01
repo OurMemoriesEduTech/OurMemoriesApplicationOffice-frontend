@@ -1,5 +1,6 @@
 import React, {createContext, useState, useContext, useEffect} from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../lib/apiBase.js';
 
 const AuthContext = createContext();
 
@@ -16,7 +17,7 @@ export const AuthProvider = ({ children }) => {
         const verifyToken = async () => {
             try {
                 console.log('Verifying session token'); // Debug log
-                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api"}/auth/verify-token`, {
+                const response = await axios.get(`${API_BASE_URL}/auth/verify-token`, {
                     withCredentials: true,
                 });
                 const { success } = response.data || {};
@@ -44,7 +45,7 @@ export const AuthProvider = ({ children }) => {
         console.log('Logging in user:', { email }); // Debug log
         try {
             const response = await axios.post(
-                `${import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api"}/auth/login`,
+                `${API_BASE_URL}/auth/login`,
                 { email, password },
                 { headers: { 'Content-Type': 'application/json' }, withCredentials: true }
             );
@@ -62,7 +63,7 @@ export const AuthProvider = ({ children }) => {
         console.log('Signing up user:', { firstName,lastName,phoneNumber, email }); // Debug log
         try {
             const response = await axios.post(
-                `${import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api"}/auth/signup`,
+                `${API_BASE_URL}/auth/signup`,
                 { firstName,lastName,phoneNumber, email, password },
                 { headers: { 'Content-Type': 'application/json' } }
             );
@@ -78,7 +79,7 @@ export const AuthProvider = ({ children }) => {
         console.log('Logging out user'); // Debug log
         try {
             await axios.post(
-                `${import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api"}/auth/logout`,
+                `${API_BASE_URL}/auth/logout`,
                 {},
                 { headers: { 'Content-Type': 'application/json' }, withCredentials: true }
             );

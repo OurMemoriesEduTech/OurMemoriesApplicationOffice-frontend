@@ -4,8 +4,10 @@ import { FaBullhorn, FaCalendarAlt, FaExclamationCircle } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import './Announcements.css';
+import { API_BASE_URL } from '../../lib/apiBase.js';
 
-const API_URL = `${import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api"}/announcements`;
+const API_URL = `${API_BASE_URL}/announcements`;
+const RETRY_DELAY_MS = 1500;
 
 const AnnouncementsPage = () => {
     const [announcements, setAnnouncements] = useState([]);
@@ -29,29 +31,58 @@ const AnnouncementsPage = () => {
     };
 
     useEffect(() => {
-        const fetchAnnouncements = async () => {
-            try {
-                setLoading(true);
-                setError('');
-                const { data } = await axios.get(API_URL);
+        let isMounted = true;
 
-                if (data.success && Array.isArray(data.announcements)) {
-                    const sorted = [...data.announcements].sort(
-                        (a, b) => new Date(b.date) - new Date(a.date)
-                    );
-                    setAnnouncements(sorted);
-                } else {
-                    setError('No announcements available at the moment.');
+        const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+        const fetchAnnouncements = async () => {
+            setLoading(true);
+            setError('');
+            try {
+                for (let attempt = 0; attempt < 2; attempt += 1) {
+                    try {
+                        const { data } = await axios.get(API_URL);
+
+                        if (!isMounted) {
+                            return;
+                        }
+
+                        if (data.success && Array.isArray(data.announcements)) {
+                            const sorted = [...data.announcements].sort(
+                                (a, b) => new Date(b.date) - new Date(a.date)
+                            );
+                            setAnnouncements(sorted);
+                            setError('');
+                        } else {
+                            setAnnouncements([]);
+                            setError('');
+                        }
+                        return;
+                    } catch (err) {
+                        if (attempt === 1) {
+                            console.error('Failed to load announcements:', err);
+                            if (isMounted) {
+                                setAnnouncements([]);
+                                setError('Failed to load announcements. Please try again later.');
+                            }
+                            return;
+                        }
+
+                        await wait(RETRY_DELAY_MS);
+                    }
                 }
-            } catch (err) {
-                console.error('Failed to load announcements:', err);
-                setError('Failed to load announcements. Please try again later.');
             } finally {
-                setLoading(false);
+                if (isMounted) {
+                    setLoading(false);
+                }
             }
         };
 
         fetchAnnouncements();
+
+        return () => {
+            isMounted = false;
+        };
     }, []);
 
     if (loading) {

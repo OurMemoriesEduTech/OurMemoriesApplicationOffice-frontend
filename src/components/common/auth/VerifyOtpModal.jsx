@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Modal, Button, Form, Alert } from 'react-bootstrap';
 import axios from 'axios';
 import './AuthModals.css';
+import { API_BASE_URL } from '../../../lib/apiBase.js';
 
 const VerifyOtpModal = ({ show, onHide, email, openResetPasswordModal }) => {
     const [otp, setOtp] = useState('');
@@ -24,7 +25,7 @@ const VerifyOtpModal = ({ show, onHide, email, openResetPasswordModal }) => {
 
         try {
             const response = await axios.post(
-                `${import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api"}/auth/forgot-password/verify-otp`,
+                `${API_BASE_URL}/auth/forgot-password/verify-otp`,
                 { email, otp },
                 { headers: { 'Content-Type': 'application/json' } }
             );
